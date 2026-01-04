@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [main]
 
+  # Manual trigger from GitHub Actions UI
+  workflow_dispatch:
+
 jobs:
   CodeQL-Build:
     runs-on: ubuntu-latest
@@ -14,7 +17,6 @@ jobs:
         language: [javascript, python, java]
 
     permissions:
-      # required for all workflows
       security-events: write
       actions: read
       contents: read
